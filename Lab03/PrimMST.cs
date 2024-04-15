@@ -20,11 +20,14 @@ public class PrimMST
 
     public void PrintMST(int[] parent, int[,] graph)
     {
+        int sumMST = 0;
         Console.WriteLine("Edge \tWeight");
         for (int i=1; i<vertices; i++) 
         {
             Console.WriteLine(parent[i] + " - " + i + "\t" + graph[i, parent[i]]);
+            sumMST += graph[i, parent[i]];
         }
+        Console.WriteLine("Сумма MST: " + sumMST);
     }
 
     public void PrimMSTAlgorithm(int[,] graph)
